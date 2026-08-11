@@ -165,6 +165,10 @@ function initCDPlayer() {
         {
             name: "1999 MOMENTUM",
             videoId: "jUyk52REKKg"
+        },
+        {
+            name: "1999 MEMORY",
+            videoId: "HpyVBF03vI8"
         }
     ];
 
