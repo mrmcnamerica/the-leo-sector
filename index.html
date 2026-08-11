@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛸 The Leo Sector 🛸</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Space Background Canvas for shooting stars / cursor trails -->
+    <canvas id="trailCanvas"></canvas>
+
+    <div class="page-wrapper">
+        
+        <!-- Retro Header Marquee -->
+        <div class="marquee-container">
+            <marquee scrollamount="6" behavior="scroll" direction="left">
+                👽 WELCOME TO THE LEO SECTOR! 👽 -- TRANSMITTING LIVE FROM SECTOR 99 -- TURN ON THE SOUNDTRACK AND SIGN THE GUESTBOOK! -- [NEWS] NEW COOL RECTANGLE DETECTED IN DEEP SPACE -- 🛸
+            </marquee>
+        </div>
+
+        <!-- Main Geocities Table Layout -->
+        <table class="main-layout" align="center" border="3" cellpadding="10" cellspacing="5">
+            <!-- Header Row -->
+            <tr>
+                <td colspan="2" class="header-banner" align="center">
+                    <!-- Spinning Planet SVG -->
+                    <svg class="spinning-planet" viewBox="0 0 100 100" width="80" height="80">
+                        <defs>
+                            <radialGradient id="planetGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#ff00cc" />
+                                <stop offset="70%" stop-color="#330066" />
+                                <stop offset="100%" stop-color="#000000" />
+                            </radialGradient>
+                            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00ffff" stop-opacity="0.8" />
+                                <stop offset="50%" stop-color="#ff00cc" stop-opacity="0.5" />
+                                <stop offset="100%" stop-color="#00ffff" stop-opacity="0.8" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Planet Body -->
+                        <circle cx="50" cy="50" r="30" fill="url(#planetGrad)" stroke="#ff00cc" stroke-width="1.5" />
+                        <!-- Planet Ring -->
+                        <ellipse cx="50" cy="50" rx="45" ry="12" fill="none" stroke="url(#ringGrad)" stroke-width="5" transform="rotate(-15, 50, 50)" />
+                        <!-- Tiny Moon -->
+                        <circle cx="20" cy="30" r="4" fill="#00ffff">
+                            <animateTransform 
+                                attributeName="transform" 
+                                type="rotate" 
+                                from="0 50 50" 
+                                to="360 50 50" 
+                                dur="6s" 
+                                repeatCount="indefinite" />
+                        </circle>
+                    </svg>
+                    
+                    <h1 class="glow-text">🛸 THE LEO SECTOR 🛸</h1>
+                </td>
+            </tr>
+
+            <!-- Main Content Area split into columns -->
+            <tr class="content-row">
+                <!-- Sidebar Column -->
+                <td class="sidebar-column" valign="top" width="220">
+                    <!-- CD Player Card -->
+                    <table class="card-table" border="2" width="100%">
+                        <tr>
+                            <td class="card-header font-impact">📻 RETRO CD PLAYER</td>
+                        </tr>
+                        <tr>
+                            <td class="card-body" align="center">
+                                <div class="cd-display">
+                                    <div class="track-number" id="cdTrack">TRK 01</div>
+                                    <div class="track-name" id="cdTrackName">COSMIC DRIVE</div>
+                                    <div class="track-time" id="cdTime">00:00</div>
+                                </div>
+                                <div class="cd-controls">
+                                    <button id="btnPrev" class="cd-btn">◀◀</button>
+                                    <button id="btnPlay" class="cd-btn">PLAY</button>
+                                    <button id="btnStop" class="cd-btn" disabled>STOP</button>
+                                    <button id="btnNext" class="cd-btn">▶▶</button>
+                                </div>
+                                <div class="cd-volume">
+                                    <span class="vol-label">VOL:</span>
+                                    <input type="range" id="volSlider" min="0" max="1" step="0.1" value="0.5">
+                                </div>
+                                <div class="cd-visualizer" id="cdVisualizer">
+                                    <div class="vis-bar"></div>
+                                    <div class="vis-bar"></div>
+                                    <div class="vis-bar"></div>
+                                    <div class="vis-bar"></div>
+                                    <div class="vis-bar"></div>
+                                </div>
+                                <div class="crt-screen-container">
+                                    <div class="crt-screen">
+                                        <div id="ytPlayerFrame"></div>
+                                    </div>
+                                </div>
+                                <div class="cd-attribution">
+                                    Audio stream uplinked from YouTube.<br>
+                                    Attribution to Lofi Girl.
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+                    <!-- Visitor Counter Card -->
+                    <table class="card-table" border="2" width="100%">
+                        <tr>
+                            <td class="card-header font-impact">🌌 SPACE CADET NUMBER</td>
+                        </tr>
+                        <tr>
+                            <td class="card-body" align="center">
+                                <div class="visitor-counter" id="visitorCounter">
+                                    <span class="counter-digit">0</span>
+                                    <span class="counter-digit">0</span>
+                                    <span class="counter-digit">1</span>
+                                    <span class="counter-digit">3</span>
+                                    <span class="counter-digit">3</span>
+                                    <span class="counter-digit">7</span>
+                                </div>
+                                <div style="font-size: 10px; margin-top: 5px; color: #ff00cc;">
+                                    VISITOR COUNT SINCE 1999
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+
+
+                    <!-- Under Construction Badge -->
+                    <div align="center" class="badge-container">
+                        <!-- Custom SVG Construction Barrier -->
+                        <svg width="120" height="40" viewBox="0 0 120 40">
+                            <defs>
+                                <pattern id="stripe" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                                    <rect width="10" height="20" fill="#ffff00"/>
+                                    <rect x="10" width="10" height="20" fill="#000"/>
+                                </pattern>
+                            </defs>
+                            <rect width="120" height="30" fill="url(#stripe)" stroke="#000" stroke-width="2"/>
+                            <rect x="10" y="5" width="100" height="20" fill="#000"/>
+                            <text x="60" y="20" fill="#ffff00" font-family="Impact" font-size="12" text-anchor="middle" letter-spacing="1">UNDER CONSTRUCTION</text>
+                        </svg>
+                    </div>
+
+                </td>
+
+                <!-- Main Content Column -->
+                <td class="main-column" valign="top">
+                    <!-- About Me Card -->
+                    <div class="rainbow-border">
+                        <table class="card-table main-card" border="2" width="100%">
+                            <tr>
+                                <td class="card-header font-impact" style="background: linear-gradient(90deg, #ff00cc, #00ffff);">
+                                    💫 WELCOME TO THE TRANSMISSION FEED 💫
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="card-body">
+                                    <p class="intro-paragraph">
+                                        Greetings, Space Cadet! You have landed on my central uplink. This is my digital transmission coordinates. From here, you can navigate to my sub-systems, download my data files, or leave a log trace in the guestbook!
+                                    </p>
+                                    <div class="bio-container">
+                                        <!-- Dancing Alien SVG -->
+                                        <div class="dancing-alien">
+                                            <svg viewBox="0 0 60 70" width="60" height="70">
+                                                <g stroke="#00ffff" stroke-width="2" fill="none">
+                                                    <!-- Head -->
+                                                    <path d="M 15,30 Q 30,10 45,30 Q 50,45 30,45 Q 10,45 15,30 Z" fill="#000"/>
+                                                    <!-- Eyes -->
+                                                    <ellipse cx="23" cy="27" rx="5" ry="8" fill="#ff00cc" stroke="none" transform="rotate(-15, 23, 27)"/>
+                                                    <ellipse cx="37" cy="27" rx="5" ry="8" fill="#ff00cc" stroke="none" transform="rotate(15, 37, 27)"/>
+                                                    <!-- Body -->
+                                                    <path d="M 30,45 L 30,58 L 20,68 M 30,58 L 40,68 M 30,50 L 15,55 M 30,50 L 45,55" />
+                                                </g>
+                                            </svg>
+                                            <div class="alien-text blink-text">DANCE!</div>
+                                        </div>
+                                        <div class="bio-text">
+                                            <strong>Codename:</strong> Lionel "Leo" McNamara <br>
+                                            <strong>Sector:</strong> Scientific Software Product Person, Cyberpunk Netrunner in training.
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <!-- Link Aggregator Section -->
+                    <table class="card-table main-card" border="2" width="100%">
+                        <tr>
+                            <td class="card-header font-impact" style="background: linear-gradient(90deg, #00ffff, #ff00cc);">
+                                🌐 TELEPORTATION UPLINKS (MY LINKS)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="card-body" align="center">
+                                <p class="links-sub">Click the buttons below to teleport to other systems in my galaxy:</p>
+                                
+                                <div class="link-grid">
+                                    <a href="#" onclick="alert('Uplink unavailable: The Portfolio system is currently under construction!'); return false;" class="geocities-link-btn font-impact">
+                                        <span class="btn-icon">🚀</span>
+                                        <span class="btn-text">MY PORTFOLIO</span>
+                                        <span class="btn-desc">Check out my visual and functional creations!</span>
+                                        <span class="btn-construction blink-text">🚧 UNDER CONSTRUCTION 🚧</span>
+                                    </a>
+
+                                    <a href="#" onclick="alert('Uplink unavailable: The Resume database is currently under construction!'); return false;" class="geocities-link-btn font-impact">
+                                        <span class="btn-icon">📄</span>
+                                        <span class="btn-text">BIO & RESUME</span>
+                                        <span class="btn-desc">The database of my capabilities and training.</span>
+                                        <span class="btn-construction blink-text">🚧 UNDER CONSTRUCTION 🚧</span>
+                                    </a>
+
+                                    <a href="https://www.thedeepsixes.com" target="_blank" class="geocities-link-btn font-impact">
+                                        <span class="btn-icon">✍️</span>
+                                        <span class="btn-text">PERSONAL BLOG</span>
+                                        <span class="btn-desc">Random entries and status logs from the void.</span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+                    <!-- Space Cadet Guestbook -->
+                    <table class="card-table main-card" border="2" width="100%">
+                        <tr>
+                            <td class="card-header font-impact" style="background: linear-gradient(90deg, #330066, #ff00cc);">
+                                ✍️ SIGN THE SPACE CADET LOG BOOK
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="card-body">
+                                <form id="guestbookForm" class="retro-form">
+                                    <table border="0" cellpadding="4" width="100%">
+                                        <tr>
+                                            <td width="30%"><label for="gName" class="form-label">CODENAME:</label></td>
+                                            <td><input type="text" id="gName" class="retro-input" required placeholder="e.g. StarLord99"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="gMsg" class="form-label">LOG MESSAGE:</label></td>
+                                            <td><textarea id="gMsg" rows="3" class="retro-input" required placeholder="Transmit your thoughts here..."></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <button type="submit" class="retro-submit font-impact">TRANSMIT TO LOGS</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+
+                                <hr class="star-divider">
+
+                                <div class="guestbook-log">
+                                    <h4 class="log-title font-impact">🛰️ LIVE TRANSMISSION LOGS 🛰️</h4>
+                                    <div class="log-entries" id="logEntries">
+                                        <!-- Dynamic entries will go here -->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+            
+            <!-- Footer Row -->
+            <tr>
+                <td colspan="2" class="footer-row" align="center">
+                    <div class="footer-links">
+                        <a href="#">[TOP OF PAGE]</a> | <a href="mailto:leo@cyber-sector.net">[EMAIL ME]</a>
+                    </div>
+                    <p class="copyright-notice">
+                        © 1999-2026 The Leo Sector. Copied files are subject to Galactic Copyright law.
+                    </p>
+                    
+                    <div class="badges-row">
+                        <!-- Retro Pixel Badges simulated with custom CSS layouts -->
+                        <div class="pixel-badge badge-ie">
+                            <span class="badge-blue">Internet Explorer</span><span class="badge-gold">4.0 Compatible</span>
+                        </div>
+                        <div class="pixel-badge badge-netscape">
+                            <span class="badge-darkblue">Netscape Navigator</span><span class="badge-green">Enhanced</span>
+                        </div>
+                        <div class="pixel-badge badge-notepad">
+                            <span class="badge-grey">MADE WITH</span><span class="badge-black">NOTEPAD</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
