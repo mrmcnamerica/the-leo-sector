@@ -178,6 +178,10 @@ function initCDPlayer() {
         if (cdTrackName) {
             cdTrackName.textContent = tracks[activeTrackIdx].name;
         }
+        const trackSelect = document.getElementById('trackSelect');
+        if (trackSelect) {
+            trackSelect.value = activeTrackIdx;
+        }
     };
 
     const startTimer = () => {
@@ -308,6 +312,26 @@ function initCDPlayer() {
     btnStop.addEventListener('click', stopSynth);
     if (btnPrev) btnPrev.addEventListener('click', () => changeTrack('prev'));
     if (btnNext) btnNext.addEventListener('click', () => changeTrack('next'));
+
+    const trackSelect = document.getElementById('trackSelect');
+    if (trackSelect) {
+        trackSelect.addEventListener('change', (e) => {
+            const selectedIdx = parseInt(e.target.value);
+            if (!isNaN(selectedIdx) && player) {
+                const wasPlaying = isPlaying;
+                activeTrackIdx = selectedIdx;
+                updateDisplay();
+
+                if (wasPlaying) {
+                    player.loadVideoById(tracks[activeTrackIdx].videoId);
+                    player.unMute();
+                    player.setVolume(volSlider.value * 100);
+                } else {
+                    player.cueVideoById(tracks[activeTrackIdx].videoId);
+                }
+            }
+        });
+    }
 
     volSlider.addEventListener('input', () => {
         if (player && typeof player.setVolume === 'function') {

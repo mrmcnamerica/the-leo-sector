@@ -249,6 +249,26 @@ body {
     border: 1px solid #fff;
 }
 
+.cd-selector {
+    margin-top: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.retro-select {
+    background-color: #000;
+    border: 2px inset #ff00cc;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 6px;
+    width: 160px;
+    outline: none;
+    cursor: pointer;
+}
+
 .cd-visualizer {
     display: flex;
     justify-content: center;
