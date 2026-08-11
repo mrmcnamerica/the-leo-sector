@@ -152,7 +152,7 @@ function initCDPlayer() {
         },
         {
             name: "LOFI HIP HOP RADIO",
-            videoId: "jfKfPfyJRdk" // Lofi Girl Hip Hop
+            videoId: "oCIzK6--3FM"
         },
         {
             name: "SPACE AMBIENT RADIO",
