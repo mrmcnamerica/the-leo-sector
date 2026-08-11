@@ -767,5 +767,156 @@ body {
     text-align: center;
 }
 
+/* Terminal Console Window simulation */
+.terminal-window {
+    background-color: #0c0211;
+    border: 3px outset #666;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.15);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.terminal-titlebar {
+    background: linear-gradient(180deg, #333 0%, #222 100%);
+    border-bottom: 2px inset #444;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+
+.red-dot { background-color: #ff5f56; }
+.yellow-dot { background-color: #ffbd2e; }
+.green-dot { background-color: #27c93f; }
+
+.terminal-title-text {
+    color: #bbb;
+    font-size: 11px;
+    margin-left: auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.terminal-content {
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.term-line {
+    margin: 5px 0;
+}
+
+.prompt-line {
+    color: #00ffff;
+}
+
+.prompt-line::before {
+    content: "";
+}
+
+.response-line {
+    color: #33ff33;
+}
+
+/* App Showcase layout inside cards */
+.app-showcase-container {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.app-icon {
+    background-color: #000;
+    border: 2px inset #444;
+    padding: 8px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
+}
+
+.app-details {
+    flex-grow: 1;
+}
+
+.app-description {
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.app-tech-spec {
+    font-size: 12px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    border-top: 1px dashed #333;
+    padding-top: 8px;
+}
+
+.app-tech-spec strong {
+    color: #ffff00;
+}
+
+.small-btn {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    width: auto !important;
+    align-self: flex-start;
+}
+
+/* Navigation highlights */
+.nav-links-menu {
+    margin-top: 12px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-links-menu a {
+    color: #ffff00;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.nav-links-menu a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.active-nav {
+    color: #ff00cc !important;
+    text-shadow: 0 0 5px #ff00cc !important;
+}
+
+/* Mobile responsive app layout stacking */
+@media (max-width: 600px) {
+    .app-showcase-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .app-icon {
+        margin-bottom: 10px;
+    }
+    
+    .small-btn {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
 
 

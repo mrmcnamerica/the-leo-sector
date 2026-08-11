@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛸 The Leo Sector 🛸</title>
+    <title>🛸 The Leo Sector - Portfolio 🛸</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         <!-- Retro Header Marquee -->
         <div class="marquee-container">
             <marquee scrollamount="6" behavior="scroll" direction="left">
-                👽 WELCOME TO THE LEO SECTOR! 👽 -- TRANSMITTING LIVE FROM SECTOR 99 -- TURN ON THE SOUNDTRACK AND SIGN THE GUESTBOOK! -- [NEWS] NEW COOL RECTANGLE DETECTED IN DEEP SPACE -- 🛸
+                🛰️ NOW DOWNLOADING COMPILER DATA FROM THE PORTFOLIO DATABASE SECTOR -- UPLINK SPEED: 56k V.90 MODEM ACTIVE -- [NEWS] VIBE-CODED APPS STABLE IN ORBIT 🛰️
             </marquee>
         </div>
 
@@ -56,6 +56,14 @@
                     </svg>
                     
                     <h1 class="glow-text">🛸 THE LEO SECTOR 🛸</h1>
+                    
+                    <!-- Nav Menu inside Header -->
+                    <div class="nav-links-menu font-impact">
+                        <a href="index.html">[🏠 MAIN UPLINK]</a> | 
+                        <a href="portfolio.html" class="active-nav">[🚀 MY PORTFOLIO]</a> | 
+                        <a href="#" onclick="alert('Uplink unavailable: The Resume database is currently under construction!'); return false;">[📄 BIO & RESUME]</a> | 
+                        <a href="mailto:leo@cyber-sector.net">[✉️ EMAIL ME]</a>
+                    </div>
                 </td>
             </tr>
 
@@ -72,7 +80,7 @@
                             <td class="card-body" align="center">
                                 <div class="cd-display">
                                     <div class="track-number" id="cdTrack">TRK 01</div>
-                                    <div class="track-name" id="cdTrackName">COSMIC DRIVE</div>
+                                    <div class="track-name" id="cdTrackName">SYNTHWAVE RADIO</div>
                                     <div class="track-time" id="cdTime">00:00</div>
                                 </div>
                                 <div class="cd-controls">
@@ -141,8 +149,6 @@
 
                     <br>
 
-
-
                     <!-- Under Construction Badge -->
                     <div align="center" class="badge-container">
                         <!-- Custom SVG Construction Barrier -->
@@ -163,38 +169,70 @@
 
                 <!-- Main Content Column -->
                 <td class="main-column" valign="top">
-                    <!-- About Me Card -->
+                    <!-- Terminal Console Header -->
+                    <div class="terminal-window">
+                        <div class="terminal-titlebar">
+                            <span class="terminal-dot red-dot"></span>
+                            <span class="terminal-dot yellow-dot"></span>
+                            <span class="terminal-dot green-dot"></span>
+                            <span class="terminal-title-text font-impact">PROMPT COMPILER v1.0.99</span>
+                        </div>
+                        <div class="terminal-content">
+                            <p class="term-line prompt-line">leo@the-sector:~$ get_vibe_coded_apps --all</p>
+                            <p class="term-line response-line">Retrieving prompt database files... Done.</p>
+                            <p class="term-line response-line">Analyzing semantic alignments... Calibrated.</p>
+                            <p class="term-line response-line">Found 2 applications compiled inside prompt pipelines:</p>
+                            <p class="term-line response-line">  -> [1] Space NetGrid Optimizer [STATUS: ONLINE]</p>
+                            <p class="term-line response-line">  -> [2] Aegis Terminal Scanner [STATUS: STABLE]</p>
+                            <p class="term-line prompt-line">leo@the-sector:~$ vibe-check --status</p>
+                            <p class="term-line blink-text" style="color: #ffff00;">SYSTEM VIBE LEVEL: OPTIMAL (100% RETRO)</p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!-- Apps Showcase Cards -->
                     <div class="rainbow-border">
                         <table class="card-table main-card" border="2" width="100%">
                             <tr>
                                 <td class="card-header font-impact" style="background: linear-gradient(90deg, #ff00cc, #00ffff);">
-                                    💫 WELCOME TO THE TRANSMISSION FEED 💫
+                                    🛰️ APPLICATION 01: NETGRID SPACE OPTIMIZER
                                 </td>
                             </tr>
                             <tr>
                                 <td class="card-body">
-                                    <p class="intro-paragraph">
-                                        Greetings, Space Cadet! You have landed on my central uplink. This is my digital transmission coordinates. From here, you can navigate to my sub-systems, download my data files, or leave a log trace in the guestbook!
-                                    </p>
-                                    <div class="bio-container">
-                                        <!-- Dancing Alien SVG -->
-                                        <div class="dancing-alien">
-                                            <svg viewBox="0 0 60 70" width="60" height="70">
+                                    <div class="app-showcase-container">
+                                        <!-- App Vector Art -->
+                                        <div class="app-icon">
+                                            <svg viewBox="0 0 100 100" width="80" height="80">
                                                 <g stroke="#00ffff" stroke-width="2" fill="none">
-                                                    <!-- Head -->
-                                                    <path d="M 15,30 Q 30,10 45,30 Q 50,45 30,45 Q 10,45 15,30 Z" fill="#000"/>
-                                                    <!-- Eyes -->
-                                                    <ellipse cx="23" cy="27" rx="5" ry="8" fill="#ff00cc" stroke="none" transform="rotate(-15, 23, 27)"/>
-                                                    <ellipse cx="37" cy="27" rx="5" ry="8" fill="#ff00cc" stroke="none" transform="rotate(15, 37, 27)"/>
-                                                    <!-- Body -->
-                                                    <path d="M 30,45 L 30,58 L 20,68 M 30,58 L 40,68 M 30,50 L 15,55 M 30,50 L 45,55" />
+                                                    <!-- Nodes -->
+                                                    <circle cx="20" cy="50" r="4" fill="#00ffff"/>
+                                                    <circle cx="50" cy="20" r="4" fill="#ff00cc"/>
+                                                    <circle cx="50" cy="80" r="4" fill="#ff00cc"/>
+                                                    <circle cx="80" cy="50" r="4" fill="#00ffff"/>
+                                                    <!-- Pathways -->
+                                                    <line x1="20" y1="50" x2="50" y2="20" stroke-dasharray="2,2"/>
+                                                    <line x1="20" y1="50" x2="50" y2="80" />
+                                                    <line x1="50" y1="20" x2="80" y2="50" />
+                                                    <line x1="50" y1="80" x2="80" y2="50" stroke-dasharray="2,2"/>
+                                                    <line x1="50" y1="20" x2="50" y2="80" stroke="#ffff00" stroke-width="1.5"/>
                                                 </g>
                                             </svg>
-                                            <div class="alien-text blink-text">DANCE!</div>
                                         </div>
-                                        <div class="bio-text">
-                                            <strong>Codename:</strong> Lionel "Leo" McNamara <br>
-                                            <strong>Sector:</strong> Scientific Software Product Person, Cyberpunk Netrunner in training.
+                                        <div class="app-details">
+                                            <p class="app-description">
+                                                A vibe-coded spatial node grid optimizer that calculates pathing vectors in orbital space. Programmed entirely via linguistic prompt streams, it designs orbital routes to prevent sector packet collision.
+                                            </p>
+                                            <div class="app-tech-spec">
+                                                <strong>Core Stack:</strong> HTML5, Canvas API, SVG Dynamics <br>
+                                                <strong>Compiled Via:</strong> Prompt-guided iterations
+                                            </div>
+                                            <div class="app-links" style="margin-top: 10px;">
+                                                <a href="#" onclick="alert('Entering wormhole to NetGrid source directory... (Placeholder)'); return false;" class="geocities-link-btn font-impact small-btn">
+                                                    TELEPORT TO CODE (MOCK)
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
@@ -204,82 +242,49 @@
 
                     <br>
 
-                    <!-- Link Aggregator Section -->
-                    <table class="card-table main-card" border="2" width="100%">
-                        <tr>
-                            <td class="card-header font-impact" style="background: linear-gradient(90deg, #00ffff, #ff00cc);">
-                                🌐 TELEPORTATION UPLINKS (MY LINKS)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="card-body" align="center">
-                                <p class="links-sub">Click the buttons below to teleport to other systems in my galaxy:</p>
-                                
-                                <div class="link-grid">
-                                    <a href="portfolio.html" class="geocities-link-btn font-impact">
-                                        <span class="btn-icon">🚀</span>
-                                        <span class="btn-text">MY PORTFOLIO</span>
-                                        <span class="btn-desc">Check out my visual and functional creations!</span>
-                                    </a>
-
-                                    <a href="#" onclick="alert('Uplink unavailable: The Resume database is currently under construction!'); return false;" class="geocities-link-btn font-impact">
-                                        <span class="btn-icon">📄</span>
-                                        <span class="btn-text">BIO & RESUME</span>
-                                        <span class="btn-desc">The database of my capabilities and training.</span>
-                                        <span class="btn-construction blink-text">🚧 UNDER CONSTRUCTION 🚧</span>
-                                    </a>
-
-                                    <a href="https://www.thedeepsixes.com" target="_blank" class="geocities-link-btn font-impact">
-                                        <span class="btn-icon">✍️</span>
-                                        <span class="btn-text">PERSONAL BLOG</span>
-                                        <span class="btn-desc">Random entries and status logs from the void.</span>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <br>
-
-                    <!-- Space Cadet Guestbook -->
-                    <table class="card-table main-card" border="2" width="100%">
-                        <tr>
-                            <td class="card-header font-impact" style="background: linear-gradient(90deg, #330066, #ff00cc);">
-                                ✍️ SIGN THE SPACE CADET LOG BOOK
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="card-body">
-                                <form id="guestbookForm" class="retro-form">
-                                    <table border="0" cellpadding="4" width="100%">
-                                        <tr>
-                                            <td width="30%"><label for="gName" class="form-label">CODENAME:</label></td>
-                                            <td><input type="text" id="gName" class="retro-input" required placeholder="e.g. StarLord99"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="gMsg" class="form-label">LOG MESSAGE:</label></td>
-                                            <td><textarea id="gMsg" rows="3" class="retro-input" required placeholder="Transmit your thoughts here..."></textarea></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td>
-                                                <button type="submit" class="retro-submit font-impact">TRANSMIT TO LOGS</button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </form>
-
-                                <hr class="star-divider">
-
-                                <div class="guestbook-log">
-                                    <h4 class="log-title font-impact">🛰️ LIVE TRANSMISSION LOGS 🛰️</h4>
-                                    <div class="log-entries" id="logEntries">
-                                        <!-- Dynamic entries will go here -->
+                    <div class="rainbow-border">
+                        <table class="card-table main-card" border="2" width="100%">
+                            <tr>
+                                <td class="card-header font-impact" style="background: linear-gradient(90deg, #00ffff, #ff00cc);">
+                                    🛡️ APPLICATION 02: AEGIS TERMINAL SCANNER
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="card-body">
+                                    <div class="app-showcase-container">
+                                        <!-- App Vector Art -->
+                                        <div class="app-icon">
+                                            <svg viewBox="0 0 100 100" width="80" height="80">
+                                                <g stroke="#ffff00" stroke-width="2" fill="none">
+                                                    <!-- Shield outline -->
+                                                    <path d="M 50,15 L 80,30 L 80,60 Q 80,85 50,90 Q 20,85 20,60 L 20,30 Z" fill="#000"/>
+                                                    <!-- Laser scan line -->
+                                                    <line x1="15" y1="45" x2="85" y2="45" stroke="#ff00cc" stroke-width="3">
+                                                        <animate attributeName="y1" values="30;70;30" dur="3s" repeatCount="indefinite"/>
+                                                        <animate attributeName="y2" values="30;70;30" dur="3s" repeatCount="indefinite"/>
+                                                    </line>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="app-details">
+                                            <p class="app-description">
+                                                An intrusion detection monitor terminal designed to intercept illegal packet streams. Developed through prompt-engineering, it outputs raw terminal traffic logs and triggers visual alerts when breach frequencies increase.
+                                            </p>
+                                            <div class="app-tech-spec">
+                                                <strong>Core Stack:</strong> Python, WebSockets, ANSI escape codes <br>
+                                                <strong>Compiled Via:</strong> Iterative prompt-tuning
+                                            </div>
+                                            <div class="app-links" style="margin-top: 10px;">
+                                                <a href="#" onclick="alert('Accessing Aegis core code archives... (Placeholder)'); return false;" class="geocities-link-btn font-impact small-btn">
+                                                    TELEPORT TO CODE (MOCK)
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
 
                 </td>
             </tr>
@@ -288,10 +293,10 @@
             <tr>
                 <td colspan="2" class="footer-row" align="center">
                     <div class="footer-links">
-                        <a href="#">[TOP OF PAGE]</a> | <a href="mailto:leo@cyber-sector.net">[EMAIL ME]</a>
+                        <a href="index.html">[🏠 BACK TO MAIN UPLINK]</a> | <a href="mailto:leo@cyber-sector.net">[EMAIL ME]</a>
                     </div>
                     <p class="copyright-notice">
-                        © 1999-2026 The Leo Sector. Copied files are subject to Galactic Copyright law.
+                        © 1999-2026 The Leo Sector. All code constructs belong to the Netrunner Collective.
                     </p>
                     
                     <div class="badges-row">
@@ -311,6 +316,7 @@
         </table>
     </div>
 
+    <!-- Load main script -->
     <script src="main.js"></script>
 </body>
 </html>
