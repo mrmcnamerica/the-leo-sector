@@ -148,15 +148,23 @@ function initCDPlayer() {
     const tracks = [
         {
             name: "SYNTHWAVE RADIO",
-            videoId: "4xDzrJKXOOY" // Lofi Girl Synthwave
+            videoId: "4xDzrJKXOOY"
         },
         {
             name: "LOFI HIP HOP RADIO",
             videoId: "oCIzK6--3FM"
         },
         {
-            name: "SPACE AMBIENT RADIO",
-            videoId: "H14bBuluwB8" // 10-Hour Deep Space Ambient
+            name: "COSMIC RADIO",
+            videoId: "WckzeouU2zY"
+        },
+        {
+            name: "TOKYO NIGHT LOFI",
+            videoId: "09K79_bD6w0"
+        },
+        {
+            name: "1999 MOMENTUM",
+            videoId: "jUyk52REKKg"
         }
     ];
 
